@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrimeFragment"
-    android:orientation="vertical">
+    tools:context=".CrimeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title" />
+        style="?android:listSeparatorTextViewStyle"
+        android:text="@string/textview_crime_title" />
+
     <EditText
+        android:id="@+id/editText_Crime_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/Enter"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-    </EditText>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/edittext_crime_title" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/detail">
-    </TextView>
+        style="?android:listSeparatorTextViewStyle"
+        android:text="@string/textView_crime_details" />
+
     <Button
+        android:id="@+id/button_Crime_Date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"></Button>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+
     <CheckBox
+        android:id="@+id/checkBox_Crime_Solved"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sloved">
-    </CheckBox>
+        android:text="@string/checkbox_solved" />
+
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -7,7 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-public class SimpleFragmentActivity extends FragmentActivity {
+public abstract class SingleFragmentActivity extends FragmentActivity {
+    protected abstract Fragment createFragment();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +19,11 @@ public class SimpleFragmentActivity extends FragmentActivity {
         Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
 
         if (fragment == null){
-            fragment = new CrimeFragment();
+            fragment = createFragment();//createFragment();//new CrimeListFragment();
             fragmentManager.beginTransaction()
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }
     }
 }
+
